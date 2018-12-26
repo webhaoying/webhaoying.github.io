@@ -338,7 +338,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-26T12:53:26+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-26T20:26:09+08:00">
                 2018-12-26
               </time>
             
@@ -374,9 +374,32 @@
       
         
           
-            <p>今天是个里程碑，我表示很开心。<br>Git checkout  - -  file<br>        注意：git checkout -b branchName    //.新建分支并且切换到该分支<br>                    git checkout branchName.     // 切换到xxxx分支<br>         git checkout — fileName. 是将我们最新的一些修改内容进行删除，<br>删除的是：已经在本地更改，但是没有git add添加到暂存区的代码。<br>        git reset HEAD - - fileName  将我们已经git add添加到暂存区的代码，回退到没有git add的状态，如果还想删除该部分内容，就需要git checkout - -  fileName</p>
-<p>如果是已经git commit 到本地缓存的代码要进行版本回退的话：<br>  git reset —hard commit_id（回退到任意一个hash代表的任意版本）<br>或者是 git reset - - hard HEAD^(代表上一个版本)<br>或者是 git reset — hard HEAD^^(代表会退到上上个版本)<br>或者是 git reset - - hard HEAD~100(代表会退到上100个版本)</p>
-<p>其中 git log 可以查看提交的历史，用来确定要会退到哪个版本</p>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天是个里程碑，我表示很开心。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h1 id="详细介绍git各种状态下的撤销更改"><a href="#详细介绍git各种状态下的撤销更改" class="headerlink" title="详细介绍git各种状态下的撤销更改"></a>详细介绍git各种状态下的撤销更改</h1><ul>
+<li><h2 id="1、已经在本地更改，但是没有-git-add-到本地暂存区的更改"><a href="#1、已经在本地更改，但是没有-git-add-到本地暂存区的更改" class="headerlink" title="1、已经在本地更改，但是没有 git add 到本地暂存区的更改"></a>1、已经在本地更改，但是没有 git add 到本地暂存区的更改</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout  --  &lt;fileName&gt; (注意：两个横杠)</span><br></pre></td></tr></table></figure>
+<p>  note(注意):</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branchName    //.新建分支并且切换到该分支</span><br><span class="line">git checkout    branchName.     // 切换到xxxx分支</span><br><span class="line">git checkout —- fileName. //将我们最新的一些修改内容进行删除(注意：两个横杠)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="2、已经在本地更改，并且已经-git-add-到本地暂存区的更改，"><a href="#2、已经在本地更改，并且已经-git-add-到本地暂存区的更改，" class="headerlink" title="2、已经在本地更改，并且已经 git add 到本地暂存区的更改，"></a>2、已经在本地更改，并且已经 git add 到本地暂存区的更改，</h2><ul>
+<li><h3 id="首先将文件恢复到只在本地更改，但是没有提交到暂存区的状态，即上述1状态："><a href="#首先将文件恢复到只在本地更改，但是没有提交到暂存区的状态，即上述1状态：" class="headerlink" title="首先将文件恢复到只在本地更改，但是没有提交到暂存区的状态，即上述1状态："></a>首先将文件恢复到只在本地更改，但是没有提交到暂存区的状态，即上述1状态：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset  --  &lt;fileName&gt; (注意：两个横杠)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="如果还想撤回对应文件的修改，然后进行上述情况1对应操作"><a href="#如果还想撤回对应文件的修改，然后进行上述情况1对应操作" class="headerlink" title="如果还想撤回对应文件的修改，然后进行上述情况1对应操作"></a>如果还想撤回对应文件的修改，然后进行上述情况1对应操作</h3></li>
+</ul>
+</li>
+<li><h2 id="3、已经在本地更改，并且已经-git-add-到本地暂存区，并且已经git-commit-到本地工作区，则需要进行版本回退，"><a href="#3、已经在本地更改，并且已经-git-add-到本地暂存区，并且已经git-commit-到本地工作区，则需要进行版本回退，" class="headerlink" title="3、已经在本地更改，并且已经 git add 到本地暂存区，并且已经git commit 到本地工作区，则需要进行版本回退，"></a>3、已经在本地更改，并且已经 git add 到本地暂存区，并且已经git commit 到本地工作区，则需要进行版本回退，</h2><ul>
+<li><h3 id="首先了解一下命令-git-log-如-下图-："><a href="#首先了解一下命令-git-log-如-下图-：" class="headerlink" title="首先了解一下命令  git log 如(下图) ："></a>首先了解一下命令  git log 如(下图) ：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/1226-log.jpeg" alt="avatar"><br>  上图中红框部分就是每一次git commit的历史记录id，并且这个id是唯一的，代表着过去的你的每一次提交,</p>
+</li>
+<li><h3 id="然后将文件回退到指定的commit版本"><a href="#然后将文件回退到指定的commit版本" class="headerlink" title="然后将文件回退到指定的commit版本"></a>然后将文件回退到指定的commit版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset  --hard  &lt;commit_id&gt; </span><br><span class="line">(注意：两个横杠, commit_id 即为上图中红框位置的字符串，并且可以省略天下，一般6位就能准确定位到具体的commit记录)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="另外还有如下的简单操作"><a href="#另外还有如下的简单操作" class="headerlink" title="另外还有如下的简单操作"></a>另外还有如下的简单操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset - - hard HEAD^(回退上一个版本)</span><br><span class="line">git reset — hard HEAD^^(回退到上上个版本)</span><br><span class="line">git reset - - hard HEAD~100(回退到上100个版本)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -619,7 +642,7 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-12-26T19:05:15+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-26T19:06:29+08:00">
                 2018-12-26
               </time>
             
@@ -691,7 +714,7 @@
             <ul>
 <li><h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><ul>
 <li>该博客使用hexo 搭建私人博客基本的配置文件备份。</li>
-<li>该仓库是使用了next主题，针对的主题的讲解，全部基于nextzhuti </li>
+<li>该仓库是使用了next主题，针对的主题的讲解，全部基于next主题 </li>
 </ul>
 </li>
 <li><h1 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h1><ul>
@@ -846,7 +869,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -910,6 +933,17 @@
                   
                     
                       StackOverflow
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.jianshu.com/u/8f84110a2927" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      简书
                     
                 </a>
               </span>
