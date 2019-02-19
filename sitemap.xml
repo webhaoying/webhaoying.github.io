@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://webhaoying.github.io/2019/02/18/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
+    
+    <lastmod>2019-02-19T06:49:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://webhaoying.github.io/2018/12/28/RaspberryPi/</loc>
     
     <lastmod>2019-02-15T07:27:08.000Z</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://webhaoying.github.io/categories/index.html</loc>
+    <loc>https://webhaoying.github.io/tags/index.html</loc>
     
     <lastmod>2018-11-28T07:32:03.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://webhaoying.github.io/tags/index.html</loc>
+    <loc>https://webhaoying.github.io/categories/index.html</loc>
     
     <lastmod>2018-11-28T07:32:03.000Z</lastmod>
     
